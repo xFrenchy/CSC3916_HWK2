@@ -45,6 +45,7 @@ router.route('/post')
         }
     );
 
+
 router.route('/postjwt')
     .post(authJwtController.isAuthenticated, function (req, res) {
             console.log(req.body);
@@ -69,6 +70,10 @@ router.post('/signup', function(req, res) {
         db.save(newUser); //no duplicate checking
         res.json({success: true, msg: 'Successful created new user.'});
     }
+});
+
+router.get('/signup', function (req, res) {
+    res.json({success: false, msg: 'Method that isn\'t POST is not supported'})
 });
 
 router.post('/signin', function(req, res) {
