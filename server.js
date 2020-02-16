@@ -97,11 +97,11 @@ router.post('/signin', function(req, res) {
 });
 
 router.route('/movies')
-    .post(authController.isAuthenticated, function (req, res) {
+    .post(function (req, res) {
         res.status(200).send({success: true, msg: 'yeet'});
         }
     )
-    .get(authController.isAuthenticated, function (req, res) {
+    .get(function (req, res) {
         res.status(420).send({success: true, msg: 'yoot'});
     }
 );
