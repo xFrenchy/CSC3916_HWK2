@@ -99,17 +99,17 @@ router.post('/signin', function(req, res) {
 router.route('/movies')
     .post(function (req, res) {
         //Figure out if the unique key needs to be hardcoded or not when sent back
-        res.status(200).send({success: true, msg: 'GET movies', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+        res.status(200).send({status: 200, msg: 'movie saved', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
         }
     )
     .get(function (req, res) {
-        res.status(420).send({success: true, msg: 'yoot'});
+        res.status(200).send({status: 200, msg: 'GET movies', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
     })
-    .put(function (req, res) {
-        res.status(420).send({success: true, msg: 'yoot'});
+    .put(authJwtController.isAuthenticated, function (req, res) {
+        res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
     })
-    .delete(function(req,res){
-        res.status(420).send({success: true, msg: 'yoot'});
+    .delete(authController.isAuthenticated, function(req,res){
+        res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
     });
 
 app.use('/', router);
