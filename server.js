@@ -112,7 +112,7 @@ router.route('/movies')
         res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
     })
     .delete(function(req,res){
-        if(req.isAuthenticated()){
+        if(req.headers.authorization){
             res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
         }
         else{
