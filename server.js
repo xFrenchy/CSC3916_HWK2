@@ -58,7 +58,7 @@ router.route('/postjwt')
         }
     );
 
-if(router.post('/signup', function(req, res) {
+router.post('/signup', function(req, res) {
     if (!req.body.username || !req.body.password) {
         res.json({success: false, msg: 'Please pass username and password.'});
     } else {
@@ -70,10 +70,7 @@ if(router.post('/signup', function(req, res) {
         db.save(newUser); //no duplicate checking
         res.json({success: true, msg: 'Successful created new user.'});
     }
-}));
-else{
-    res.json({success: false, msg: 'Method that isn\'t POST is not supported'})
-}
+});
 
 //router.get('/signup', function (req, res) {
 //    res.json({success: false, msg: 'Method that isn\'t POST is not supported'})
@@ -98,6 +95,16 @@ router.post('/signin', function(req, res) {
             }
         };
 });
+
+router.route('/movies')
+    .post(authController.isAuthenticated, function (req, res) {
+        res.status(200).send({success: true, msg: 'yeet'});
+        }
+    )
+    .get(authController.isAuthenticated, function (req, res) {
+        res.status(420).send({success: true, msg: 'yoot'});
+    }
+);
 
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
