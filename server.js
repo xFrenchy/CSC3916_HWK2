@@ -70,11 +70,11 @@ router.post('/signup', function(req, res) {
         db.save(newUser); //no duplicate checking
         res.json({success: true, msg: 'Successful created new user.'});
     }
-});
+})
+    .all(function (req, res) {
+        res.status(405).send({msg: 'this method is not supported'});
+    });
 
-//router.get('/signup', function (req, res) {
-//    res.json({success: false, msg: 'Method that isn\'t POST is not supported'})
-//});
 
 router.post('/signin', function(req, res) {
 
@@ -94,7 +94,10 @@ router.post('/signin', function(req, res) {
                 res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
             }
         };
-});
+})
+    .all(function (req, res) {
+        res.status(405).send({msg: 'this method is not supported'});
+    });
 
 router.route('/movies')
     .post(function (req, res) {
@@ -108,8 +111,13 @@ router.route('/movies')
     .put(authJwtController.isAuthenticated, function (req, res) {
         res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
     })
-    .delete(authController.isAuthenticated, function(req,res){
-        res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+    .delete(function(req,res){
+        if(req.isAuthenticated){
+            res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+        }
+        else{
+            res.status(401).send({msg: 'You are not authenticated'});
+        }
     })
     .all(function (req, res) {
         res.status(405).send({msg: 'this method is not supported'});
