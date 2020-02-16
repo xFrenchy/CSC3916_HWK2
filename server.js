@@ -58,7 +58,7 @@ router.route('/postjwt')
         }
     );
 
-router.post('/signup', function(req, res) {
+if(router.post('/signup', function(req, res) {
     if (!req.body.username || !req.body.password) {
         res.json({success: false, msg: 'Please pass username and password.'});
     } else {
@@ -70,11 +70,14 @@ router.post('/signup', function(req, res) {
         db.save(newUser); //no duplicate checking
         res.json({success: true, msg: 'Successful created new user.'});
     }
-});
-
-router.get('/signup', function (req, res) {
+}));
+else{
     res.json({success: false, msg: 'Method that isn\'t POST is not supported'})
-});
+}
+
+//router.get('/signup', function (req, res) {
+//    res.json({success: false, msg: 'Method that isn\'t POST is not supported'})
+//});
 
 router.post('/signin', function(req, res) {
 
