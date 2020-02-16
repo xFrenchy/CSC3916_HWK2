@@ -102,7 +102,7 @@ router.post('/signin', function(req, res) {
 router.route('/movies')
     .post(function (req, res) {
         //Figure out if the unique key needs to be hardcoded or not when sent back
-        res.status(200).send({status: 200, msg: 'movie saved', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+        res.status(200).send({status: 200, msg: 'movie saved', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
         }
     )
     .get(function (req, res) {
