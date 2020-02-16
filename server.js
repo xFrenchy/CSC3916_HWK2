@@ -98,13 +98,19 @@ router.post('/signin', function(req, res) {
 
 router.route('/movies')
     .post(function (req, res) {
-        res.status(200).send({success: true, msg: 'yeet'});
+        //Figure out if the unique key needs to be hardcoded or not when sent back
+        res.status(200).send({success: true, msg: 'GET movies', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
         }
     )
     .get(function (req, res) {
         res.status(420).send({success: true, msg: 'yoot'});
-    }
-);
+    })
+    .put(function (req, res) {
+        res.status(420).send({success: true, msg: 'yoot'});
+    })
+    .delete(function(req,res){
+        res.status(420).send({success: true, msg: 'yoot'});
+    });
 
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
