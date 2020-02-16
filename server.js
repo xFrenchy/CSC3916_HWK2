@@ -106,14 +106,14 @@ router.route('/movies')
         }
     )
     .get(function (req, res) {
-        res.status(200).send({status: 200, msg: 'GET movies', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+        res.status(200).send({status: 200, msg: 'GET movies', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
     .put(authJwtController.isAuthenticated, function (req, res) {
-        res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+        res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
     .delete(function(req,res){
         if(req.headers.authorization){
-            res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: 'swrexcfvgj'});
+            res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
         }
         else{
             res.status(401).send({msg: 'You are not authenticated'});
