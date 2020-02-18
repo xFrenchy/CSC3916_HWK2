@@ -111,13 +111,8 @@ router.route('/movies')
     .put(authJwtController.isAuthenticated, function (req, res) {
         res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
-    .delete(function(req,res){
-        if(req.headers.authorization){
-            res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
-        }
-        else{
-            res.status(401).send({msg: 'You are not authenticated'});
-        }
+    .delete(authController.isAuthenticated, function(req,res){
+        res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
     .all(function (req, res) {
         res.status(405).send({msg: 'this method is not supported'});
