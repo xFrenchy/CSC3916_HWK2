@@ -35,6 +35,7 @@ function getJSONObject(req) {
 router.route('').all(function(req,res){
     res.status(405).send({msg: 'this method is not supported on the base url'});
     });
+
 router.route('/post')
     .post(authController.isAuthenticated, function (req, res) {
             console.log(req.body);
@@ -114,14 +115,8 @@ router.route('/movies')
     .put(authJwtController.isAuthenticated, function (req, res) {
         res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
-    .delete(function(req,res){
-        if(authController.isAuthenticated) {
-            res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
-        }
-        else{
-            res.status(401).send({msg: 'You are not authorized for this, check your username and password'})
-        }
-
+    .delete(authController.isAuthenticated, function(req,res){
+        res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
     // .delete(!authController.isAuthenticated, function(req, res){
     //     res.status(401).send({msg: 'You are not authorized for this, check your username and password'})
