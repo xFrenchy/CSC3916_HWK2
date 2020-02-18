@@ -32,6 +32,9 @@ function getJSONObject(req) {
     return json;
 }
 
+router.route('').all(function(req,res){
+    res.status(405).send({msg: 'this method is not supported on the base url'});
+    });
 router.route('/post')
     .post(authController.isAuthenticated, function (req, res) {
             console.log(req.body);
@@ -112,7 +115,6 @@ router.route('/movies')
         res.status(200).send({status: 200, msg: 'movie updated', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
     .delete(authController.isAuthenticated, function(req,res){
-        console.log("We've reached the delete route")
         res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
     .all(function (req, res) {
