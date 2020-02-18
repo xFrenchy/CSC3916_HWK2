@@ -117,6 +117,9 @@ router.route('/movies')
     .delete(authController.isAuthenticated, function(req,res){
         res.status(200).send({status: 200, msg: 'movie deleted', headers: req.headers, query: req.query, env: process.env.UNIQUE_KEY});
     })
+    .delete(!authController.isAuthenticated, function(req, res){
+        res.status(401).send({msg: 'You are not authorized for this, check your username and password'})
+    })
     .all(function (req, res) {
         res.status(405).send({msg: 'this method is not supported'});
     });
