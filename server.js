@@ -33,7 +33,7 @@ function getJSONObject(req) {
 }
 
 router.route('').all(function(req,res){
-    res.status(405).send({msg: 'this method is not supported on the base url'});
+    res.status(500).send({msg: 'this method is not supported on the base url'});
     });
 
 router.route('/post')
@@ -76,7 +76,7 @@ router.post('/signup', function(req, res) {
     }
 })
     .all(function (req, res) {
-        res.status(405).send({msg: 'this method is not supported'});
+        res.status(500).send({msg: 'this method is not supported'});
     });
 
 
@@ -100,7 +100,7 @@ router.post('/signin', function(req, res) {
         };
 })
     .all(function (req, res) {
-        res.status(405).send({msg: 'this method is not supported'});
+        res.status(500).send({msg: 'this method is not supported'});
     });
 
 router.route('/movies')
@@ -122,7 +122,7 @@ router.route('/movies')
     //     res.status(401).send({msg: 'You are not authorized for this, check your username and password'})
     // })
     .all(function (req, res) {
-        res.status(405).send({msg: 'this method is not supported'});
+        res.status(500).send({msg: 'this method is not supported'});
     });
 
 app.use('/', router);
