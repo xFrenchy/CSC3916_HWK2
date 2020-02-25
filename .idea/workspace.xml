@@ -30,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hwkSomething" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
@@ -93,7 +93,7 @@
       <workItem from="1550101915200" duration="605000" />
       <workItem from="1550105398207" duration="557000" />
       <workItem from="1581552570193" duration="13112000" />
-      <workItem from="1581983633548" duration="7834000" />
+      <workItem from="1581983633548" duration="9678000" />
     </task>
     <servers />
   </component>
@@ -109,22 +109,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="542" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1581552866712" />
-    <state width="1515" height="300" key="GridCell.Tab.0.bottom" timestamp="1582581748189">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1582589046447">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="300" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582581748189" />
-    <state width="1515" height="300" key="GridCell.Tab.0.center" timestamp="1582581748189">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582589046447" />
+    <state width="1515" height="300" key="GridCell.Tab.0.bottom" timestamp="1582592342104">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="300" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582581748189" />
-    <state width="1515" height="300" key="GridCell.Tab.0.left" timestamp="1582581748188">
+    <state width="1515" height="300" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582592342104" />
+    <state width="1515" height="300" key="GridCell.Tab.0.center" timestamp="1582592342104">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="300" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582581748188" />
-    <state width="1515" height="300" key="GridCell.Tab.0.right" timestamp="1582581748189">
+    <state width="1515" height="300" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582592342104" />
+    <state width="1515" height="300" key="GridCell.Tab.0.left" timestamp="1582592342103">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="300" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582581748189" />
+    <state width="1515" height="300" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582592342103" />
+    <state width="1515" height="300" key="GridCell.Tab.0.right" timestamp="1582592342104">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="300" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582592342104" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
