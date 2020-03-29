@@ -1,2 +1,2 @@
-# week4
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b57efe13e7d9b496ffed)
+# week2
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5f257982f5598517cad1)
